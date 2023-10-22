@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 
-def split_to_x_and_y(limit):
+def split_to_x_and_y(limit) -> None:
     """Splitting file to X.csv and Y.csv files"""
     for i in range(limit):
         f_dates.write(f'{dates[i]}\n')

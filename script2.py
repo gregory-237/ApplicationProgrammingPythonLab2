@@ -8,7 +8,7 @@ for name, group in df.set_index('Date').groupby(pd.Grouper(freq='Y')):
     years_data.append(group.apply(lambda x: [str(x.name)[:10], str(x['Dollar_Rate'])], axis=1).values.tolist())
 
 
-def split_by_years(years_data_list):
+def split_by_years(years_data_list) -> None:
     """Splitting file by years"""
     for year in years_data_list:
         with open(f'script2/{year[0][0].replace("-", "")}_{year[-1][0].replace("-", "")}.csv', 'w') as f:
@@ -18,17 +18,3 @@ def split_by_years(years_data_list):
 
 if __name__ == "__main__":
     split_by_years(years_data)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
